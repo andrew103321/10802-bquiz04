@@ -42,15 +42,15 @@ body
 #right
 {
 	display:inline-block;
-	width:70%;
+	width:65%;
 	padding:2%;
-	height:550px;
+	min-height:550px;
 	border:#000 1px solid;
-	overflow: auto;
 }
 #bottom
 {
 	height:70px;
+	background:url(icon/bot.png);
 	background-size:cover;
 }
 .al
@@ -65,8 +65,8 @@ body
 }
 .all td
 {
-	min-width:50px;
-	padding:5px;
+	min-width:100px;
+	padding:10px;
 }
 .tt
 {

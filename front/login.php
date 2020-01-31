@@ -16,8 +16,8 @@
         <td class="tt ct">驗證碼</td>
         <td class="pp">
         <?php
-            $a=rand(0,1);
-            $b=rand(0,1);
+            $a=rand(10,99);
+            $b=rand(10,99);
             $_SESSION['num']=$a+$b;
             echo $a . " + " . $b ." = ";
         ?>
@@ -38,7 +38,7 @@ function login(table){
             let pw=$("#pw").val();
             $.get("./api/chkpw.php",{table,acc,pw},function(res){
                 if(res=='1'){
-                    location.href="admin.php";
+                    location.href="index.php";
                 }else{
                     alert("帳號或密碼錯誤")
                 }

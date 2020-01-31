@@ -1,14 +1,16 @@
 <?php 
 
-
+//建立PDO
 $dsn="mysql:host=localhost;charset=utf8;dbname=db04";
 $pdo=new PDO($dsn,"root","");
 
-
+//啟用session
 session_start();
 
+//設定時區
+date_default_timezone_set("Asia/Taipei");
 
-
+//取得單筆資料
 function find($table,...$arg){
   global $pdo;
 
