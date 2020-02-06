@@ -69,7 +69,7 @@ foreach($bigs as $b){
         <td class="ct"><?=$r['no'];?></td>
         <td class="ct"><?=$r['name'];?></td>
         <td class="ct"><?=$r['qt'];?></td>
-        <td class="ct"><?=($r['sh']==1)?"販售中":"已下架"?></td>
+        <td class="ct" id="sh<?=$r['id'];?>"><?=($r['sh']==1)?"販售中":"已下架"?></td>
         <td class="ct">
           <button onclick="lof('admin.php?do=edit_goods&id=<?=$r['id'];?>')">修改</button>
           <button onclick="del('goods',<?=$r['id'];?>)">刪除</button><br>        
@@ -81,15 +81,6 @@ foreach($bigs as $b){
     }
     ?>
 </table>
-
-
-
-
-
-
-
-
-
 
 <script>
 function editType(dom,id){
@@ -103,6 +94,25 @@ function editType(dom,id){
         })
     }
 }
+    function shGoods(id,type){
+        $.post("./api/shgoods.php",{id,type},function(res){
+          
+        //   法1
+            location.reload()
+
+        //   法2
+            // switch(type){
+            //     case 1:
+            //         $("shid"+id).html("販售中")
+            //     break;
+            //     case 0:
+            //         $("shid"+id).html("以下架")
+            //     break;
+
+        })
+
+        }
+    
 
 </script>
 

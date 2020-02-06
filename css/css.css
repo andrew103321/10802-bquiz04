@@ -110,3 +110,7 @@ div.ww:hover > div.s
 {
 	font-size:12px;
 }
+
+#left .ww .s a{
+	background: seagreen;
+}

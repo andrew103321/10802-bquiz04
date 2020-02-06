@@ -21,21 +21,57 @@
                 <a href="?">回首頁</a> |
                 <a href="?do=news">最新消息</a> |
                 <a href="?do=look">購物流程</a> |
-                <a href="?do=buycart">購物車</a> |
-                                <a href="?do=login">會員登入</a> |
-                                <a href="?do=admin">管理登入</a>
+                <a href="?do=buycar">購物車</a> |
+                <?php
+              
+                        if(empty($_SESSION['mem'])){
+                ?>
+                                <a href="?do=login">會員登入</a> 
+                <?php
+                        }else{
+                ?>
+                                <a href="./api/logout.php">登出</a>
+                <?php
+                }
+                ?>
+                |
+                 <a href="?do=login">會員登入</a> 
            </div>
            <marquee>
 		年終特賣會開跑了　　情人節特惠活動
 		</marquee></div>
         <div id="left" class="ct">
-        	<div style="min-height:400px;">
-        	            </div>
+                <div style="min-height:400px;">
+                <div class="ww"><a href="index.php">全部商品(<?=nums("goods",["sh"=>1]);?>)</a></div>
+                <?php
+
+                        $row = all("type",["parent"=>0]);
+                        foreach($row as $r ){
+                            ;
+                
+                ?>
+                        <div class="ww"><a href="index.php?type=<?=$r['id'];?>"><?=$r['text'];?>(<?=nums("goods",["main"=>$r['id']]);?>)</a>
+                                 <?php
+                              
+                                 $row = all("type",["parent"=>$r["id"]]);
+                                 foreach($row as $r ){
+                ?>      
+                        <div class="s"><a href="index.php?type=<?=$r['id'];?>"><?=$r['text'];?>(<?= nums("goods",["sub"=>$r["id"]]);?>)</a></div>
+                <?php
+                        }
+                ?>
+                        
+                        </div>
+                <?php
+                        }
+                ?>
+               
                         <span>
             	<div>進站總人數</div>
                 <div style="color:#f00; font-size:28px;">
                 	00005                </div>
             </span>
+                    </div>
                     </div>
         <div id="right">
         <?php

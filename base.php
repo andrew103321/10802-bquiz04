@@ -80,7 +80,7 @@ function nums($table,...$arg){
         $tmp[]=sprintf("`%s`='%s'",$key,$value);
 
       }
-
+// echo $sql;
       $sql=$sql . " where " . implode(" && ",$tmp);
 
     }    
