@@ -13,7 +13,7 @@
     foreach($rows as $r){
     ?>
     <tr class="pp">
-        <td class="ct"><?=$r['no'];?></td>
+    <td class="ct"><a href='admin.php?do=ord_detail&id=<?=$r['id'];?>'><?=$r['no'];?></a></td>
         <td class="ct"><?=$r['total'];?></td>
         <td class="ct"><?=$r['acc'];?></td>
         <td class="ct"><?=$r['name'];?></td>

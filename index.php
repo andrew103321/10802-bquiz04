@@ -34,8 +34,20 @@
                 <?php
                 }
                 ?>
+                 <?php
+              
+              if(empty($_SESSION['admin'])){
+      ?>   
                 |
-                 <a href="?do=login">會員登入</a> 
+                 <a href="?do=admin">管理登入</a>
+      <?php
+              }else{
+      ?>            |    
+                      <a href="admin.php">返回管理</a>
+      <?php
+      }
+      ?>
+             
            </div>
            <marquee>
 		年終特賣會開跑了　　情人節特惠活動
